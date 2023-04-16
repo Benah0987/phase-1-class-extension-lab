@@ -38,4 +38,29 @@ class Triangle extends Polygon {
     }
 
 }
+class Square extends Polygon{
+    constructor(sides){
+        super([side, side, side, side]);
+        this.side = side;
+    }
+    get isValid(){
+        //destructuring
+        const [a,b,c,d] = this.sides;
+        return(a===b) && (b===c) && (c===d);
+    }
+    //a getter method to c
+    get area(){
+        return this.side **2
+    }
+
+    
+}
+
+const square1 = new Square(5);
+
+console.log(square1.countSides); // Output: 4
+console.log(square1.perimeter()); // Output: 20
+console.log(square1.isValid); // Output: true
+console.log(square1.area); // Output: 25
+
 
